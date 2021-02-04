@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fondo_nicky"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_carta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="4dp">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_item"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="4dp"
+                    android:scaleType="fitCenter"
+                    android:layout_margin="4dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="4dp">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_title_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text="Hamburguesa Común"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/blanco_marfil_nicky"
+                        android:padding="4dp" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_ingredientes_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="Ingredientes:"
+                        android:textAlignment="center"
+                        android:textColor="@color/blanco_marfil_nicky"
+                        android:padding="4dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_precio"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textSize="20sp"
+                    android:background="@drawable/fondo_nicky"
+                    android:gravity="center"/>
+                <ImageButton
+                    android:id="@+id/buAdherezos"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0"
+                    android:background="@drawable/rectangle_round_shape"/>
+
+
+                <TextView
+                    android:id="@+id/tvAdherezos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_weight="0"
+                    android:padding="4dp"
+                    android:text="Adherezos e ingredientes"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</LinearLayout>

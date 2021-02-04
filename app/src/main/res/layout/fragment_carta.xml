@@ -3,25 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.Carta">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/info"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_carta_fragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Primer Fragmento"
-        android:gravity="center"
-        android:textSize="20sp"/>
-    <RelativeLayout
-        android:id="@+id/progressBar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-        <androidx.core.widget.ContentLoadingProgressBar
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
-    </RelativeLayout>
+            app:layout_constraintTop_toTopOf="@id/container_carta_fragment"
+            app:layout_constraintStart_toStartOf="@id/container_carta_fragment"
+            app:layout_constraintEnd_toEndOf="@id/container_carta_fragment"
+            app:layout_constraintBottom_toTopOf="@id/rv_tragos"
+            android:text="Primer Fragmento"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tragos"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/container_carta_fragment"
+            app:layout_constraintEnd_toEndOf="@id/container_carta_fragment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
 
 </FrameLayout>
