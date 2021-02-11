@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cuty.nicky.R
@@ -20,7 +22,7 @@ import com.cuty.nicky.ui.viewmodels.VMFactory
 import com.cuty.nicky.vo.Resource
 
 
-class Carta : Fragment() , MainAdapter.OnTragoClickListener{
+class Carta : Fragment(), MainAdapter.OnTragoClickListener {
 
     private val viewModel by activityViewModels<MainViewModel> {
         VMFactory(RepoImplementation(DataSource()))
@@ -42,11 +44,13 @@ class Carta : Fragment() , MainAdapter.OnTragoClickListener{
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentCartaBinding.bind(view)
         loadingDialog = LoadingDialog(requireActivity())
-        setUpObservers()
         setupRecyclerView()
-
+        setUpObservers()
     }
+
+
     private fun setupRecyclerView() {
+
         binding.rvTragos.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTragos.addItemDecoration(
                 DividerItemDecoration(
@@ -54,6 +58,7 @@ class Carta : Fragment() , MainAdapter.OnTragoClickListener{
                         DividerItemDecoration.VERTICAL
                 )
         )
+
     }
     private fun setUpObservers(){
         viewModel.fetchItemList.observe(viewLifecycleOwner, Observer { result->
@@ -64,10 +69,10 @@ class Carta : Fragment() , MainAdapter.OnTragoClickListener{
                 }
                 is Resource.Success ->{
                     //binding.progressBar.visibility = View.GONE
-                    binding.info.text = result.data.toString()
+                    //binding.info.text = result.data.toString()
                     loadingDialog.dissmissDialog()
                     binding.rvTragos.adapter = MainAdapter(requireContext(),
-                            result.data as List<CartaItem>,this)
+                            result.data as List<CartaItem>, this)
                 }
                 is Resource.Failure -> {
                     //binding.progressBar.visibility = View.GONE
@@ -84,6 +89,10 @@ class Carta : Fragment() , MainAdapter.OnTragoClickListener{
 
     override fun onTragoClick(drink: CartaItem, position: Int) {
         Toast.makeText(requireContext(),"Hola mina xd",Toast.LENGTH_SHORT).show()
+        //ir a detalles y adherezos luego volver para pedir los adherezos
+        findNavController().navigate(R.id.action_mainFragment_to_adherezos , bundleOf("pedido" to drink))
+
     }
+
 
 }

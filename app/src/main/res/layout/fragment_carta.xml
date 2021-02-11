@@ -12,17 +12,6 @@
         android:id="@+id/container_carta_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/container_carta_fragment"
-            app:layout_constraintStart_toStartOf="@id/container_carta_fragment"
-            app:layout_constraintEnd_toEndOf="@id/container_carta_fragment"
-            app:layout_constraintBottom_toTopOf="@id/rv_tragos"
-            android:text="Primer Fragmento"
-            android:gravity="center"
-            android:textSize="20sp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_tragos"
@@ -32,7 +21,7 @@
             app:layout_constraintBottom_toBottomOf="@id/container_carta_fragment"
             app:layout_constraintEnd_toEndOf="@id/container_carta_fragment"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/info" />
+            app:layout_constraintTop_toTopOf="@id/container_carta_fragment" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

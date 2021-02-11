@@ -9,6 +9,15 @@
         android:id="@+id/mainFragment"
         android:name="com.cuty.nicky.ui.Carta"
         android:label="fragment_carta"
-        tools:layout="@layout/fragment_carta" />
+        tools:layout="@layout/fragment_carta" >
+        <action
+            android:id="@+id/action_mainFragment_to_adherezos"
+            app:destination="@id/adherezos" />
+    </fragment>
+    <fragment
+        android:id="@+id/adherezos"
+        android:name="com.cuty.nicky.ui.Adherezos"
+        android:label="fragment_adherezos"
+        tools:layout="@layout/fragment_adherezos" />
 
 </navigation>

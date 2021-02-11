@@ -6,6 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
@@ -49,7 +53,9 @@ class MainAdapter(
             itemView.findViewById<TextView>(R.id.tv_precio).text = item.precio.toString()
 
             itemView.findViewById<ImageButton>(R.id.buAdherezos).setOnClickListener {
-                itemClickListener.onTragoClick(item,position)}
+                itemClickListener.onTragoClick(item,position)
+            }
         }
     }
+
 }

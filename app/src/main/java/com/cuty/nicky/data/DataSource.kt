@@ -8,4 +8,5 @@ class DataSource {
     suspend fun getItemCartaList():Resource<List<CartaItem>>{
         return Resource.Success( RestrofitInstanceCarta.webService.getAllItems())
     }
+
 }
