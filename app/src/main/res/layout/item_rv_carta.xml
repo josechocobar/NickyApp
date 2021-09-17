@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/item_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/fondo_nicky"
-    android:orientation="vertical">
+    android:background="@drawable/fondo_verde">
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_carta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@android:color/transparent"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="10dp">
+        app:cardCornerRadius="8dp"
+        app:cardElevation="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -26,21 +30,30 @@
                     android:id="@+id/img_item"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:padding="4dp"
                     android:scaleType="fitCenter"
-                    android:layout_margin="4dp"/>
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/text_container"
+                    app:layout_constraintStart_toStartOf="parent"/>
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:id="@+id/text_container"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="4dp">
+                    android:padding="4dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toEndOf="@id/img_item"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tv_title_item"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:text="Hamburguesa Común"
-                        android:textAlignment="center"
+                        android:textAlignment="textStart"
                         android:textStyle="bold"
                         android:textColor="@color/blanco_marfil_nicky"
                         android:padding="4dp" />
@@ -50,47 +63,54 @@
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
                         android:text="Ingredientes:"
-                        android:textAlignment="center"
+                        android:textAlignment="textStart"
                         android:textColor="@color/blanco_marfil_nicky"
                         android:padding="4dp"/>
 
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_precio"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/blanco_marfil_nicky"
+                        android:text="Precio:"
+                        android:textSize="20sp"
+                        android:textAlignment="textStart"/>
+
                 </LinearLayout>
 
-            </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center">
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_precio"
-                    android:layout_width="80dp"
+                    android:id="@+id/tvAdherezos"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:textSize="20sp"
-                    android:background="@drawable/fondo_nicky"
-                    android:gravity="center"/>
+                    android:layout_weight="0"
+                    android:padding="4dp"
+                    android:text="Agregar Adherezos e ingredientes"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="14sp"
+                    tools:layout_editor_absoluteX="192dp"
+                    tools:layout_editor_absoluteY="86dp" />
+
                 <ImageButton
                     android:id="@+id/buAdherezos"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0"
+                    android:src="@drawable/ic_baseline_add_24"
                     android:background="@drawable/rectangle_round_shape"/>
 
 
-                <TextView
-                    android:id="@+id/tvAdherezos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_weight="0"
-                    android:padding="4dp"
-                    android:text="Adherezos e ingredientes"
-                    android:textAllCaps="false"
-                    android:gravity="center"
-                    android:textColor="@color/blanco_marfil_nicky"
-                    android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -100,4 +120,4 @@
 
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,23 +6,59 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.Carta">
 
-    <!-- TODO: Update blank fragment layout -->
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_carta_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/title_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:foregroundGravity="left"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="bold"
+            android:text="Con hambre? Ordena y come"/>
+        <ImageView
+            android:id="@+id/iv_filter"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="@dimen/_20sdp"
+            android:background="@drawable/background_naranja"
+            android:src="@drawable/ic_baseline_filter_list_24"/>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_tragos"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="@id/container_carta_fragment"
+            app:layout_constraintBottom_toTopOf="@id/bu_carrito"
             app:layout_constraintEnd_toEndOf="@id/container_carta_fragment"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/container_carta_fragment" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_filter" />
+        <Button
+            android:id="@+id/bu_carrito"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/ic_baseline_shopping_cart_24"
+            android:backgroundTint="@color/verde_nicky"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 

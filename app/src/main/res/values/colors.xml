@@ -11,7 +11,17 @@
     <color name="azul_nicky">#206CC6</color>
     <color name="rosa_nicky">#C6206C</color>
     <color name="azul_oscuro_nicky">#395F8B</color>
-    <color name="verde_nicky">#6CC620</color>
+    <color name="verde_nicky">#0C3033</color>
     <color name="rojo_nicky">#C6202A</color>
     <color name="blanco_marfil_nicky">#FFFFE8</color>
+    <color name="amarillo_nicky">#B7CE36</color>
+
+    <color name="blanco">#F1F1F4</color>
+    <color name="gris">#A8B8C5</color>
+    <color name="naranja">#F59507</color>
+    <color name="marron">#412C1D</color>
+    <color name="rojo">#C1471A</color>
+    <color name="amarillo">#D7B159</color>
+    <color name="verde">#6D932B</color>
+
 </resources>

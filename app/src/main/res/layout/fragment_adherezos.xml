@@ -1,14 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.Adherezos">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_adherezos_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="#0c3033"
+        android:gravity="center_vertical">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_image_container"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintEnd_toEndOf="@id/cl_adherezos_container"
+            app:layout_constraintStart_toStartOf="@id/cl_adherezos_container"
+            app:layout_constraintTop_toTopOf="@id/cl_adherezos_container">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_adherezos_sandwich"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/cl_image_container"
+                app:layout_constraintEnd_toEndOf="@id/cl_image_container"
+                app:layout_constraintStart_toStartOf="@id/cl_image_container"
+                app:layout_constraintTop_toTopOf="@id/cl_image_container"></androidx.appcompat.widget.AppCompatImageView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_linea_uno"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/fab_ordenar"
+            app:layout_constraintEnd_toStartOf="@id/cl_linea_dos"
+            app:layout_constraintStart_toStartOf="@id/cl_adherezos_container"
+            app:layout_constraintTop_toBottomOf="@id/cl_image_container">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/cl_linea_uno"
+                app:layout_constraintEnd_toEndOf="@id/cl_linea_uno"
+                app:layout_constraintStart_toStartOf="@id/cl_linea_uno"
+                app:layout_constraintTop_toTopOf="@id/cl_linea_uno">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_mayonesa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="Mayonesa"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_savora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="savora" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_ketchup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="ketchup" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_cheddar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="cheddar" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_roquefort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="roquefort" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_linea_dos"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/fab_ordenar"
+            app:layout_constraintEnd_toStartOf="@id/cl_linea_tres"
+            app:layout_constraintStart_toEndOf="@id/cl_linea_uno"
+            app:layout_constraintTop_toBottomOf="@id/cl_image_container">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/cl_linea_dos"
+                app:layout_constraintEnd_toEndOf="@id/cl_linea_dos"
+                app:layout_constraintStart_toStartOf="@id/cl_linea_dos"
+                app:layout_constraintTop_toTopOf="@id/cl_linea_dos">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_chimichurri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="Chimichurri" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_salame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="Salame" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_apio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="Apio" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_aceituna"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="Aceituna" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_parmesano"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="Parmesano" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_linea_tres"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/cl_adherezos_container"
+            app:layout_constraintStart_toEndOf="@id/cl_linea_dos"
+            app:layout_constraintTop_toBottomOf="@id/cl_image_container"
+            app:layout_constraintBottom_toTopOf="@id/fab_ordenar">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/cl_linea_tres"
+                app:layout_constraintEnd_toEndOf="@id/cl_linea_tres"
+                app:layout_constraintStart_toStartOf="@id/cl_linea_tres"
+                app:layout_constraintTop_toTopOf="@id/cl_linea_tres">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_ajo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="Ajo" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_choclo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="Choclo" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_morron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="Morrón" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_sal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="Sal" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/ch_verduras"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blanco_marfil_nicky"
+                    android:textSize="15sp"
+                    android:text="Verduras"
+                    android:checked="true"/>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_ordenar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="70dp"
+            app:layout_constraintBottom_toBottomOf="@id/cl_adherezos_container"
+            app:layout_constraintEnd_toEndOf="@id/cl_adherezos_container" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

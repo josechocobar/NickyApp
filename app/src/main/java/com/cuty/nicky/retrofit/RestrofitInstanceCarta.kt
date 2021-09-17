@@ -1,6 +1,6 @@
 package com.cuty.nicky.retrofit
 
-import com.google.gson.GsonBuilder
+import com.google.gson.*
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -8,7 +8,7 @@ import retrofit2.create
 import java.util.concurrent.TimeUnit
 
 object RestrofitInstanceCarta {
-    const val HEROKU_URL = "https://nicky-api.herokuapp.com/"
+    const val HEROKU_URL = "https://nicky-api.herokuapp.com"
     const val URL_BASE = "/api/v1/itemscarta"
 
     val client : OkHttpClient = OkHttpClient.Builder()

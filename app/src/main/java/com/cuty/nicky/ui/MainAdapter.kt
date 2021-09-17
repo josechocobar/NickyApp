@@ -47,9 +47,11 @@ class MainAdapter(
 
             override fun bind(item: CartaItem, position: Int) {
 
-            Glide.with(context).load(item.imagen).transform(RoundedCorners(20)).into(itemView.findViewById(R.id.img_item))
+            Glide.with(context).load(item.imagen).transform(RoundedCorners(200)).centerCrop().into(itemView.findViewById(R.id.img_item))
             itemView.findViewById<TextView>(R.id.tv_title_item).text = item.nombreItemCarta
-            itemView.findViewById<TextView>(R.id.tv_ingredientes_item).text = item.ingredientes
+                val valueString = context.getString(R.string.ingredientes)
+                val ingredientes= "$valueString${item.ingredientes}"
+            itemView.findViewById<TextView>(R.id.tv_ingredientes_item).text = ingredientes
             itemView.findViewById<TextView>(R.id.tv_precio).text = item.precio.toString()
 
             itemView.findViewById<ImageButton>(R.id.buAdherezos).setOnClickListener {

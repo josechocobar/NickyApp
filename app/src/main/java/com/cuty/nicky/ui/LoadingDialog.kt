@@ -7,7 +7,7 @@ import com.cuty.nicky.R
 
 class LoadingDialog (myactivity: Activity){
     lateinit var activity: Activity
-    lateinit var dialog: Dialog
+    var dialog: Dialog?=null
 
     init {
         activity = myactivity
@@ -18,11 +18,11 @@ class LoadingDialog (myactivity: Activity){
         builder.setView(inflater.inflate(R.layout.custom_dialog, null))
         builder.setCancelable(true)
         dialog = builder.create()
-        dialog.show()
+        dialog?.show()
 
     }
     fun dissmissDialog(){
-        dialog.dismiss()
+        dialog?.dismiss()
 
     }
 

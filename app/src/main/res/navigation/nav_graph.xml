@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     android:label="fragment_carta"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.cuty.nicky.ui.Carta"
@@ -13,11 +13,53 @@
         <action
             android:id="@+id/action_mainFragment_to_adherezos"
             app:destination="@id/adherezos" />
+        <action
+            android:id="@+id/action_mainFragment_to_pizzasFragment"
+            app:destination="@id/pizzasFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_carritoDeComprasFragment"
+            app:destination="@id/carritoDeComprasFragment" />
     </fragment>
     <fragment
         android:id="@+id/adherezos"
         android:name="com.cuty.nicky.ui.Adherezos"
         android:label="fragment_adherezos"
-        tools:layout="@layout/fragment_adherezos" />
+        tools:layout="@layout/fragment_adherezos" >
+        <action
+            android:id="@+id/action_adherezos_to_carritoDeComprasFragment"
+            app:destination="@id/carritoDeComprasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carritoDeComprasFragment"
+        android:name="com.cuty.nicky.ui.CarritoDeComprasFragment"
+        android:label="fragment_carrito_de_compras"
+        tools:layout="@layout/fragment_carrito_de_compras" >
+        <action
+            android:id="@+id/action_carritoDeComprasFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="carrito"
+            app:argType="com.cuty.nicky.models.CarritoItem"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/pizzasFragment"
+        android:name="com.cuty.nicky.ui.PizzasFragment"
+        android:label="fragment_pizzas"
+        tools:layout="@layout/fragment_pizzas" >
+        <action
+            android:id="@+id/action_pizzasFragment_to_carritoDeComprasFragment"
+            app:destination="@id/carritoDeComprasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.cuty.nicky.ui.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 
 </navigation>
